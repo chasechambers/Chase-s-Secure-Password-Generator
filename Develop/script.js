@@ -19,7 +19,7 @@ const specialCharactersList = ["!"];
 // Add event listener to generate button
 
 // PROMPT SECTION
-function passwordGeneratorButton() {
+function passwordGenerator() {
   var characterLength = prompt('Please choose between 8 and 128 characters.');
   if (characterLength >= 8 && characterLength <= 128) {
     var length = characterLength.toLowerCase();
@@ -82,7 +82,13 @@ function passwordGeneratorButton() {
     return;
   }
 
-  console.log(userChoices);
+  var passwordArray = [];
+  for(i=0; i<=characterLength; i++) {
+    var randomItems = Math.floor(Math.random()*userChoices.length);
+    passwordArray.push(userChoices[randomItems]);
+  }
+
 }
 
-generateBtn.addEventListener('click', passwordGeneratorButton, writePassword);
+
+generateBtn.addEventListener('click', passwordGenerator, writePassword);
