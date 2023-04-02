@@ -5,7 +5,7 @@ var generateBtn = document.querySelector('#generate');
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
-
+  console.log(password.length);
   passwordText.value = password;
 }
 
@@ -14,7 +14,7 @@ const uppercaseAlphabet = 'ABCDEFGHIJKLMOPQRSTUVWYX';
 const lowercaseAlphabetList = lowercaseAlphabet.split('');
 const uppercaseAlphabetList = uppercaseAlphabet.split('');
 const numbersList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-const specialCharactersList = ["!","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@", "[", "]", "^", "_", "`", "{", "}", "|", "~"]
+const specialCharactersList = ["!","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@", "[", "]", "^", "_", "`", "{", "}", "|", "~", '"', "`"]
 
 // Add event listener to generate button
 
@@ -24,7 +24,7 @@ function generatePassword() {
   if (characterLength >= 8 && characterLength <= 128) {
     var length = characterLength.toLowerCase();
   } else {
-    var characterLength = prompt('Please choose between 8 and 128 characters.');
+    var characterLength = prompt('Your number was not between 8 and 128 characters. Please try one more time.');
     if (characterLength >= 8 && characterLength <= 128) {
       var length = characterLength.toLowerCase();
     } else {
@@ -36,7 +36,7 @@ function generatePassword() {
   var uppercaseLetters = confirm('Would you like to include uppercase characters? Okay = yes, Cancel = no'
   );
   var numbers = confirm('Would you like to include numbers? Okay = yes, Cancel = no');
-  var specialCharacters = confirm('Would you like to include special characters?');
+  var specialCharacters = confirm('Would you like to include special characters? Okay = yes, Cancel = no');
 
   // LOWERCASE SECTION
 
