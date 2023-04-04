@@ -8,8 +8,9 @@ function writePassword() {
   passwordText.value = password;
 }
 
+// DEFINING CHOICES
 const lowercaseAlphabet = 'abcdefghijklmnopqrstuvwxyz';
-const uppercaseAlphabet = 'ABCDEFGHIJKLMOPQRSTUVWYX';
+const uppercaseAlphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const lowercaseAlphabetList = lowercaseAlphabet.split('');
 const uppercaseAlphabetList = uppercaseAlphabet.split('');
 const numbersList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
